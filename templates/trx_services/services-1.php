@@ -37,9 +37,9 @@ if ( !function_exists( 'yogastudio_template_services_1_output' ) ) {
 		?>
 		<div<?php echo !empty($post_options['tag_id']) ? ' id="'.esc_attr($post_options['tag_id']).'"' : ''; ?>
 		class="sc_services_item sc_services_item_<?php echo esc_attr($post_options['number']) . ($post_options['number'] % 2 == 1 ? ' odd' : ' even') . ($post_options['number'] == 1 ? ' first' : '') . (!empty($post_options['tag_class']) ? ' '.esc_attr($post_options['tag_class']) : ''); ?>"
-		<?php echo (!empty($post_options['tag_css']) ? ' style="'.esc_attr($post_options['tag_css']).'"' : '') 
+		<?php echo (!empty($post_options['tag_css']) ? ' style="'.esc_attr($post_options['tag_css']).'"' : '')
 		. (!yogastudio_param_is_off($post_options['tag_animation']) ? ' data-animation="'.esc_attr(yogastudio_get_animation_classes($post_options['tag_animation'])).'"' : ''); ?>>
-		<?php 
+		<?php
 		if ($post_data['post_icon'] && $post_options['tag_type']=='icons') {
 			$html = yogastudio_do_shortcode('[trx_icon icon="'.esc_attr($post_data['post_icon']).'" shape="round"]');
 			if ((!isset($post_options['links']) || $post_options['links']) && !empty($post_data['post_link'])) {
@@ -59,34 +59,34 @@ if ( !function_exists( 'yogastudio_template_services_1_output' ) ) {
 			if ($show_title) {
 				if ((!isset($post_options['links']) || $post_options['links']) && !empty($post_data['post_link'])) {
 					?><h4 class="sc_services_item_title"><a href="<?php echo esc_url($post_data['post_link']); ?>">
-					<?php 
+					<?php
 					echo trim($post_data['post_title']);
 					?>
 				</a></h4><?php
 			} else {
 				?><h4 class="sc_services_item_title">
-				<?php 
-				echo trim($post_data['post_title']);	
+				<?php
+				echo trim($post_data['post_title']);
 				?>
 			</h4><?php
 		}
 	}
 	?>
 
-	<div class="sc_services_item_description">
+	<!-- <div class="sc_services_item_description">
 		<?php
-		if ($post_data['post_protected']) {
-			echo trim($post_data['post_excerpt']); 
-		} else {
-			if ($post_data['post_excerpt']) {
-				echo in_array($post_data['post_format'], array('quote', 'link', 'chat', 'aside', 'status')) ? $post_data['post_excerpt'] : '<p>'.trim(yogastudio_strshort($post_data['post_excerpt'], isset($post_options['descr']) ? $post_options['descr'] : yogastudio_get_custom_option('post_excerpt_maxlength_masonry'))).'</p>';
-			}
-			if (!empty($post_data['post_link']) && !yogastudio_param_is_off($post_options['readmore'])) {
-				?><a href="<?php echo esc_url($post_data['post_link']); ?>" class="sc_services_item_readmore"><?php echo trim($post_options['readmore']); ?><span class="icon-play-circled"></span></a><?php
-			}
-		}
+		// if ($post_data['post_protected']) {
+		// 	echo trim($post_data['post_excerpt']);
+		// } else {
+		// 	if ($post_data['post_excerpt']) {
+		// 		echo in_array($post_data['post_format'], array('quote', 'link', 'chat', 'aside', 'status')) ? $post_data['post_excerpt'] : '<p>'.trim(yogastudio_strshort($post_data['post_excerpt'], isset($post_options['descr']) ? $post_options['descr'] : yogastudio_get_custom_option('post_excerpt_maxlength_masonry'))).'</p>';
+		// 	}
+		// 	if (!empty($post_data['post_link']) && !yogastudio_param_is_off($post_options['readmore'])) {
+		// 		?><a href="<?php // echo esc_url($post_data['post_link']); ?>" class="sc_services_item_readmore"><?php // echo trim($post_options['readmore']); ?><span class="icon-play-circled"></span></a><?php
+		// 	}
+		// }
 		?>
-	</div>
+	</div> -->
 </div>
 </div>
 <?php
