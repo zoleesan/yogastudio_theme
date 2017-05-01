@@ -394,7 +394,7 @@ if ( !function_exists( 'yogastudio_core_frontend_scripts' ) ) {
 
 		// Google map
 		if ( yogastudio_get_custom_option('show_googlemap')=='yes' ) { 
-			yogastudio_enqueue_script( 'googlemap', yogastudio_get_protocol().'://maps.google.com/maps/api/js?sensor=false', array(), null, true );
+			yogastudio_enqueue_script( 'googlemap', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBGq02KRjjgoi-w1D2T-JzCCOwEXbpv0tI', array(), null, true );
 			yogastudio_enqueue_script( 'yogastudio-googlemap-script', yogastudio_get_file_url('js/core.googlemap.js'), array(), null, true );
 		}
 

@@ -1533,6 +1533,11 @@ body:not(.top_panel_fixed) .top_panel_position_over .top_panel_bottom {
 
 }
 
+.top_panel_style_5 .language_switcher_left_menu {
+	position: absolute;
+	top: 11px;
+	left: 0;
+}
 
 .top_panel_style_5 .top_panel_wrap_inner {
 	text-align:center;

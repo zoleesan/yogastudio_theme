@@ -26,6 +26,7 @@ if ( !function_exists( 'yogastudio_template_services_5_output' ) ) {
 		$show_title = true;
 		$parts = explode('_', $post_options['layout']);
 		$style = $parts[0];
+		$id = get_the_ID();
 		$columns = max(1, min(12, empty($parts[1]) ? (!empty($post_options['columns_count']) ? $post_options['columns_count'] : 1) : (int) $parts[1]));
 		if (yogastudio_param_is_on($post_options['slider'])) {
 			?><div class="swiper-slide" data-style="<?php echo esc_attr($post_options['tag_css_wh']); ?>" style="<?php echo esc_attr($post_options['tag_css_wh']); ?>"><div class="sc_services_item_wrap"><?php
@@ -54,7 +55,8 @@ if ( !function_exists( 'yogastudio_template_services_5_output' ) ) {
 				?>
 				<div class="sc_services_item_content">
 					<?php
-					echo the_date('M d, Y', '<h4 class="title_date">', '</h4>', true);
+					//echo the_date('M d, Y', '<h4 class="title_date">', '</h4>', true);
+					echo '<h4 class="title_date">', get_post_meta($id, 'days', true),'</h4>';
 					if ($show_title) {
 						if ((!isset($post_options['links']) || $post_options['links']) && !empty($post_data['post_link'])) {
 							?><h4 class="sc_services_item_title"><a href="<?php echo esc_url($post_data['post_link']); ?>"><?php echo trim($post_data['post_title']); ?></a></h4><?php

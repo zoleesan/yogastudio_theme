@@ -105,6 +105,9 @@ if ( !function_exists( 'yogastudio_template_header_5_output' ) ) {
 							echo trim(yogastudio_sc_search(array('class'=>"top_panel_icon", 'state'=>"closed")));
 						?>
 					</div>
+					<div class="language_switcher_left_menu">
+						<?php do_action('wpml_add_language_selector'); ?>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -43,7 +43,7 @@ if (!function_exists('yogastudio_sc_googlemap')) {
 		$css .= yogastudio_get_css_dimensions_from_values($width, $height);
 		if (empty($id)) $id = 'sc_googlemap_'.str_replace('.', '', mt_rand());
 		if (empty($style)) $style = yogastudio_get_custom_option('googlemap_style');
-		yogastudio_enqueue_script( 'googlemap', yogastudio_get_protocol().'://maps.google.com/maps/api/js?sensor=false', array(), null, true );
+		yogastudio_enqueue_script( 'googlemap', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBGq02KRjjgoi-w1D2T-JzCCOwEXbpv0tI', array(), null, true );
 		yogastudio_enqueue_script( 'yogastudio-googlemap-script', yogastudio_get_file_url('js/core.googlemap.js'), array(), null, true );
 		global $YOGASTUDIO_GLOBALS;
 		$YOGASTUDIO_GLOBALS['sc_googlemap_markers'] = array();
