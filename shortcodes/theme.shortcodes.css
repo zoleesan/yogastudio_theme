@@ -4716,14 +4716,14 @@ content: none;
 	width: 100%;
 	position: relative;
 	overflow: hidden;
-	height: 170px;
+	height: 140px;
 	text-align: center;
 }
 
 .sc_schedule_wrap .sc_schedule_title{
 	font-size: 1.125em;
 	font-weight: 600;
-	padding:0.47em 0;
+	padding:0.25em 0;
 	position: relative;
 }
 
@@ -4747,7 +4747,8 @@ content: none;
 .sc_schedule_wrap .sc_schedule_tags{
 	font-size: 0.875em;
 	font-weight: 400;
-	 margin-bottom: 6px;
+	margin-bottom: 4px;
+	height: 20px;
 }
 
 .sc_schedule_wrap .sc_schedule_time{
@@ -4764,5 +4765,5 @@ padding: 2px 8px;
 }
 
 .sc_schedule_wrap .sc_schedule_content{
-margin: 1em 0;
+margin: 0.7em 0;
 }
