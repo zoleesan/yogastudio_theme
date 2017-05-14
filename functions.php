@@ -55,7 +55,7 @@ if ( !function_exists( 'yogastudio_add_theme_sidebars' ) ) {
 		if (is_array($sidebars)) {
 			$theme_sidebars = array(
 				'sidebar_main'		=> esc_html__( 'Main Sidebar', 'yogastudio' ),
-				'sidebar_footer'	=> esc_html__( 'Footer Sidebar', 'yogastudio' ),
+				// 'sidebar_footer'	=> esc_html__( 'Footer Sidebar', 'yogastudio' ),
 				'sidebar_left'	=> esc_html__( 'Left Sidebar', 'yogastudio' ),
 				'sidebar_rightwoo'	=> esc_html__( 'Right WooCommerce Sidebar', 'yogastudio' )
 			);

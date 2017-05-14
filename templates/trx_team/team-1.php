@@ -40,9 +40,9 @@ if ( !function_exists( 'yogastudio_template_team_1_output' ) ) {
 				class="sc_team_item sc_team_item_<?php echo esc_attr($post_options['number']) . ($post_options['number'] % 2 == 1 ? ' odd' : ' even') . ($post_options['number'] == 1 ? ' first' : '') . (!empty($post_options['tag_class']) ? ' '.esc_attr($post_options['tag_class']) : ''); ?>"
 				<?php echo (!empty($post_options['tag_css']) ? ' style="'.esc_attr($post_options['tag_css']).'"' : '') 
 					. (!yogastudio_param_is_off($post_options['tag_animation']) ? ' data-animation="'.esc_attr(yogastudio_get_animation_classes($post_options['tag_animation'])).'"' : ''); ?>>
-				<div class="sc_team_item_avatar"><?php echo (!empty($post_options['link']) ? '<a href="'.esc_url($post_options['link']).'" class="hover_icon">' : '') . trim($post_options['photo']) . (!empty($post_options['link']) ? '</a>' : ''); ?></div>
+				<div class="sc_team_item_avatar"><?php echo (!empty($post_options['link']) ? '<a class="hover_icon">' : '') . trim($post_options['photo']) . (!empty($post_options['link']) ? '</a>' : ''); ?></div>
 				<div class="sc_team_item_info">
-					<h5 class="sc_team_item_title"><?php echo (!empty($post_options['link']) ? '<a href="'.esc_url($post_options['link']).'">' : '') . ($post_data['post_title']) . (!empty($post_options['link']) ? '</a>' : ''); ?></h5>
+					<h5 class="sc_team_item_title"><?php echo (!empty($post_options['link']) ? '<a >' : '') . ($post_data['post_title']) . (!empty($post_options['link']) ? '</a>' : ''); ?></h5>
 					<div class="sc_team_item_position"><?php echo trim($post_options['position']);?></div>
 					<?php echo trim($post_options['socials']); ?>
 				</div>
