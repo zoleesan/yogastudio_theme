@@ -2675,7 +2675,9 @@ margin-top: 1px;
 .sc_services_style_services-5 .sc_services_item .sc_services_item_readmore span{
 	display: none;
 }
-
+.sc_services_style_services-5 .sc_services_item img.wp-post-image {
+	height: 248px;
+}
 .sc_services_style_services-5 .hover_icon_link:before{
 	display: none;
 }
@@ -4716,7 +4718,7 @@ content: none;
 	width: 100%;
 	position: relative;
 	overflow: hidden;
-	height: 140px;
+	height: 150px;
 	text-align: center;
 }
 
@@ -4748,7 +4750,7 @@ content: none;
 	font-size: 0.875em;
 	font-weight: 400;
 	margin-bottom: 4px;
-	height: 20px;
+	height: 40px;
 }
 
 .sc_schedule_wrap .sc_schedule_time{
@@ -4766,4 +4768,5 @@ padding: 2px 8px;
 
 .sc_schedule_wrap .sc_schedule_content{
 margin: 0.7em 0;
+height: 60px;
 }
