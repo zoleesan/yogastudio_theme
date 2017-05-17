@@ -72,7 +72,7 @@
 					'slug' => 'custom-fields',
 					'content' => '<i class="fa fa-pencil"></i>&nbsp;&nbsp;'.esc_html__('Custom Fields','booked')),
 				array(
-					'access' => 'admin',
+					'access' => 'agent',
 					'slug' => 'export-appointments',
 					'content' => '<i class="fa fa-external-link-square"></i>&nbsp;&nbsp;'.esc_html__('Export','booked')),
 				array(
