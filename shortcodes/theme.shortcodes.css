@@ -2675,9 +2675,9 @@ margin-top: 1px;
 .sc_services_style_services-5 .sc_services_item .sc_services_item_readmore span{
 	display: none;
 }
-.sc_services_style_services-5 .sc_services_item img.wp-post-image {
+/*.sc_services_style_services-5 .sc_services_item img.wp-post-image {
 	height: 248px;
-}
+}*/
 .sc_services_style_services-5 .hover_icon_link:before{
 	display: none;
 }
@@ -4747,7 +4747,7 @@ content: none;
 }
 
 .sc_schedule_wrap .sc_schedule_tags{
-	font-size: 0.875em;
+	font-size: 1em;
 	font-weight: 400;
 	margin-bottom: 4px;
 	height: 40px;

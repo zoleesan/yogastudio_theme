@@ -56,7 +56,7 @@ if (!function_exists('yogastudio_sc_schedule')) {
 				. ($isempty =="yes" ? '<div class="sc_schedule_inner">'
 				. '<div class="sc_schedule_title" '.(empty($bg_color) ? '' : 'style="background:'.esc_attr($bg_color).'; border-color:'.esc_attr($bg_color).';"').'>'.($title).'</div>'
 					. '<div class="sc_schedule_content">'
-						. '<div class="sc_schedule_tags">' . esc_attr($tags) . '</div>'
+						. '<div class="sc_schedule_tags">' . str_replace('//', '<br/>', esc_attr($tags) ). '</div>'
 						. '<div class="sc_schedule_time">' . esc_attr($lessontime) . '</div>'
 					. '</div>'
 					. '<div class="sc_schedule_button">

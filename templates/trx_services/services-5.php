@@ -48,7 +48,22 @@ if ( !function_exists( 'yogastudio_template_services_5_output' ) ) {
 				} else {
 					?>
 					<div class="sc_services_item_featured post_featured">
-						<?php require yogastudio_get_file_dir('templates/_parts/post-featured.php'); ?>
+						<?php //require yogastudio_get_file_dir('templates/_parts/post-featured.php'); 
+						
+						$post_data['post_thumb'] = yogastudio_get_resized_image_tag($post_data['post_attachment'], 285, 248 );
+
+						?>
+						<div class="post_thumb" data-image="<?php echo esc_url($post_data['post_attachment']); ?>" data-title="<?php echo esc_attr($post_data['post_title']); ?>">
+						<?php
+						if ($post_data['post_format']=='link' && $post_data['post_url']!='')
+							echo '<a class="hover_icon hover_icon_link" href="'.esc_url($post_data['post_url']).'"'.($post_data['post_url_target'] ? ' target="'.esc_attr($post_data['post_url_target']).'"' : '').'>'.($post_data['post_thumb']).'</a>';
+						else if ($post_data['post_link']!='')
+							echo '<a class="hover_icon hover_icon_link" href="'.esc_url($post_data['post_link']).'">'.($post_data['post_thumb']).'</a>';
+						else
+							echo trim($post_data['post_thumb']); 
+						?>
+						</div>
+
 					</div>
 					<?php
 				}
