@@ -245,6 +245,8 @@ Very common low res
 	h5 { font-size:1.1667em; }	/* 14px */
 	h6 { font-size:1em; }		/* 12px */
 	
+	h4.schedule-day-title { font-size: 2.2em !important; }
+
 	/* Post layouts */
 	.isotope_filters a {
 		font-size:0.8333em;
