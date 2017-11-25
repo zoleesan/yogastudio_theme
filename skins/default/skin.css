@@ -931,6 +931,23 @@ a {
 .scheme_green .sc_table table tr:first-child th:first-child strong {
   color: #ffffff;
 }
+
+.renata-coznici-prices .sc_price_block .sc_price {
+  background-color: #63BC3A !important;
+}
+
+.zsolt-ertsey-prices .sc_price_block .sc_price {
+  background-color: #23BAE0 !important;
+}
+
+.andrea-molnar-prices .sc_price_block .sc_price {
+  background-color: #F2D937 !important;
+}
+
+.kinga-hoffman-prices .sc_price_block .sc_price {
+  background-color: #E738F7 !important;
+}
+
 .scheme_original .sc_table table tr td:nth-child(2),
 .scheme_original .sc_table table tr td:last-child {
   color: #f8a000;
@@ -10972,6 +10989,10 @@ button,
 .scheme_original div[class*='column-']:nth-child(3n+1) .sc_price_block .sc_price {
   background-color: #8dd0d3;
 }
+.scheme_original div[class*='wpb_column']:nth-child(3n+1) .sc_price_block .sc_price {
+  background-color: #8dd0d3;
+}
+
 .scheme_pink div[class*='column-']:nth-child(3n+1) .sc_price_block .sc_price {
   background-color: #a47bba;
 }
@@ -10984,6 +11005,10 @@ button,
 .scheme_original div[class*='column-']:nth-child(3n+2) .sc_price_block .sc_price {
   background-color: #554c86;
 }
+.scheme_original div[class*='wpb_column']:nth-child(3n+2) .sc_price_block .sc_price {
+  background-color: #554c86;
+}
+
 .scheme_pink div[class*='column-']:nth-child(3n+2) .sc_price_block .sc_price {
   background-color: #554c86;
 }
@@ -10996,6 +11021,11 @@ button,
 .scheme_original div[class*='column-']:nth-child(3n+3) .sc_price_block .sc_price {
   background-color: #f8a000;
 }
+.scheme_original div[class*='wpb_column']:nth-child(3n+3) .sc_price_block .sc_price {
+  background-color: #f8a000;
+}
+
+
 .scheme_pink div[class*='column-']:nth-child(3n+3) .sc_price_block .sc_price {
   background-color: #eea0d4;
 }

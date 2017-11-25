@@ -2208,18 +2208,24 @@ ul.sc_list_style_iconed {
 
 /* Price block
 -------------------------------------------------------------- */
+#two_line_title.sc_price_block .sc_price_block_title {
+	width: 150px;
+	margin: 0 auto 0.84em auto;
+}
 .sc_price_block {
     display:inline-block;
     overflow:hidden;
     width: 100%;
-    padding: 3.1em 2em 2.65em 2em;
+    padding: 1.8em 1.5em 1.8em 1.5em;
     box-sizing: border-box;
+	min-height: 415px;
 }
 .sc_price_block .sc_price_block_title {
     text-align:center;
     font-size: 1.563em;
     font-weight: 600;
     margin-bottom: 0.84em;
+	line-height: 28px;
 
 }
 .sc_price_block .sc_price_block_money {
@@ -2230,6 +2236,7 @@ ul.sc_list_style_iconed {
 
 .sc_price_block .sc_price_block_money .sc_price_period{
     display: block;
+    font-size:15px;
 }
 
 .sc_price_block .sc_price_block_money .sc_price_block_icon {
@@ -2245,24 +2252,29 @@ ul.sc_list_style_iconed {
 }
 .sc_price_block .sc_price_block_money .sc_price_currency {
     font-weight:400;
-    font-size: 1.35em;
+    font-size: 1.1em;
     line-height:inherit;
-    position: absolute;
-    top: 1.7em;
-    left: 1.4em;
+    position: relative;
 }
 .sc_price_block .sc_price_block_money .sc_price_money {
     font-weight: 400;
-    font-size: 3.125em;
-    line-height:inherit;
-        padding-left: 0.2em;
+    font-size: 2.5em;
+    line-height: inherit;
+    padding-left: 0.2em;
+    position: relative;
+    top: -10px;
+    left: 0px;
 }
 .sc_price_block .sc_price_block_description {
     font-size: 1em;
     line-height: 1.3em;
-    height:8.2857em;
-    padding: 0 4em 0 5em;
+    height: 9em;
+    padding: 0 1em 0 1em;
     overflow:hidden;
+}
+
+.sc_price_block .sc_price_block_description ul {
+    margin-bottom: 1em;
 }
 
 .sc_price_block .sc_price_block_description li{

@@ -49,8 +49,8 @@ if (!function_exists('yogastudio_sc_price')) {
 					. '"'
 					. ($css!='' ? ' style="'.esc_attr($css).'"' : '')
 					. '>'
-				. '<span class="sc_price_currency">'.($currency).'</span>'
 				. '<span class="sc_price_money">'.($m[0]).'</span>'
+				. '<span class="sc_price_currency">'.($currency).'</span>'
 				. (!empty($m[1]) ? '<span class="sc_price_info">' : '')
 				. (!empty($m[1]) ? '<span class="sc_price_penny">'.($m[1]).'</span>' : '')
 				. (!empty($period) ? '<span class="sc_price_period">'.($period).'</span>' : (!empty($m[1]) ? '<span class="sc_price_period_empty"></span>' : ''))
