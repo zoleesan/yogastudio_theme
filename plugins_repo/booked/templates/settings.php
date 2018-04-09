@@ -1612,14 +1612,13 @@ Time: %time%
 												<h3><?php esc_html_e('Export Appointments','booked'); ?></h3>
 												<p><?php esc_html_e('You can export all appointments or specify what you want by choosing from the below options.','booked'); ?></p>	
 												<br>
-												<div class="select-box">
-													<label class="booked-color-label" for="appointment_time"><?php esc_html_e('Appointment Dates','booked'); ?>:</label>
-													<select name="appointment_time">
-														<option value="" selected="selected"><?php esc_html_e('Upcoming & Past','booked'); ?></option>
-														<option value="upcoming"><?php esc_html_e('Only Upcoming','booked'); ?></option>
-														<option value="past"><?php esc_html_e('Only Past','booked'); ?></option>
-													</select>
-												</div>
+
+                                                <div class="select-box">
+													<label class="booked-color-label" for="appointment_time"><?php esc_html_e('Appointment Dates Between','booked'); ?>:</label>
+                                                    <input type="text" placeholder="<?php esc_html_e("Export start date","booked"); ?>..." class="booked_export_start_date" name="booked_export_start_date" value="<?php echo date('Y-m-d'); ?>">
+                                                    <input type="text" placeholder="<?php esc_html_e("Export end date","booked"); ?>..." class="booked_export_end_date" name="booked_export_end_date" value="<?php echo date('Y-m-d'); ?>">
+                                                    <br>
+                                                </div>
 												
 												<br>
 												<div class="select-box">
@@ -1652,7 +1651,7 @@ Time: %time%
 										</div>
 										
 										<div class="section-row submit-section" style="padding:0;">
-											<p class="submit">
+                                            <p class="submit">
 												<button class="button-primary"><i class="fa fa-external-link-square"></i>&nbsp;&nbsp;<?php esc_html_e('Export Appointments to CSV','booked'); ?></button>
 											</p>
 										</div>

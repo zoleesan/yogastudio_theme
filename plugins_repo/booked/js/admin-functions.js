@@ -1,7 +1,7 @@
 // make it a global variable so other scripts can access it
 var booked_load_calendar_date_booking_options;
 
-;(function($, window, document, undefined) {
+(function($, window, document, undefined) {
 
 	var $win = $(window);
 
@@ -398,7 +398,25 @@ var booked_load_calendar_date_booking_options;
 
 		});
 
-		function init_custom_timeslot_block(thisTimeslot,rand){
+        $("#booked-export-appointments")
+            .find('.booked_export_start_date').datepicker({
+                dateFormat: "yy-mm-dd",
+                beforeShow: function(input, inst) {
+                    $('#ui-datepicker-div').removeClass();
+                    $('#ui-datepicker-div').addClass('booked_custom_date_picker');
+                }
+            });
+        $
+		("#booked-export-appointments")
+            .find('.booked_export_end_date').datepicker({
+				dateFormat: "yy-mm-dd",
+				beforeShow: function(input, inst) {
+					$('#ui-datepicker-div').removeClass();
+					$('#ui-datepicker-div').addClass('booked_custom_date_picker');
+				}
+        });
+
+        function init_custom_timeslot_block(thisTimeslot,rand){
 
 			hideAddCustomTimeslotsForm();
 			thisTimeslot.find('#vacationDayCheckbox').attr('id','vacationDayCheckbox-'+rand);

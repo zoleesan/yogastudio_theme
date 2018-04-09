@@ -1,21 +1,13 @@
 <?php
-	
-if ($_POST['appointment_time'] && $_POST['appointment_time'] == 'upcoming'):
-	$current_timestamp = current_time('timestamp');
+
+if ($_POST['booked_export_start_date'] && $_POST['booked_export_end_date']):
+	$start_date = strtotime($_POST['booked_export_start_date']);
+    $end_date   = strtotime($_POST['booked_export_end_date']);
 	$meta_query = array(
 		array(
 			'key'     => '_appointment_timestamp',
-			'value'   => $current_timestamp,
-			'compare' => '>='
-		)
-	);
-elseif ($_POST['appointment_time'] && $_POST['appointment_time'] == 'past'):
-	$current_timestamp = current_time('timestamp');
-	$meta_query = array(
-		array(
-			'key'     => '_appointment_timestamp',
-			'value'   => $current_timestamp,
-			'compare' => '<'
+			'value'   => array($start_date, $end_date),
+			'compare' => 'BETWEEN'
 		)
 	);
 else:
