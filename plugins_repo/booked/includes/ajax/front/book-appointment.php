@@ -196,8 +196,7 @@ if ($appt_is_available):
 					$errors[] = esc_html__('An unknown error occured.','booked');
 				endif;
 			
-				echo 'error###'.implode('
-',$errors);
+				echo 'error###'.implode('',$errors);
 			
 			endif;
 
@@ -210,7 +209,7 @@ if ($appt_is_available):
 			$user = wp_get_current_user();
 			$user_id = $user->ID;
 		}
-	
+
 		// Create a new appointment post for a current customer
 		$new_post = apply_filters('booked_new_appointment_args', array(
 			'post_title' => date_i18n($date_format,$timestamp).' @ '.date_i18n($time_format,$timestamp).' (User: '.$user_id.')',

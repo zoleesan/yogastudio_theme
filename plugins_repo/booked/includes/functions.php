@@ -680,8 +680,6 @@ function booked_fe_calendar_date_content($date,$calendar_id = false){
 					endif;
 				endforeach;
 
-				$allready_appointed = ( in_array(get_current_user_id(), $users_in_this_timeslot) ? true : false );
-
 				/*
 				Calculate the number of spots available based on total minus the appointments booked
 				*/
@@ -774,7 +772,7 @@ function booked_fe_calendar_date_content($date,$calendar_id = false){
 								$html .= apply_filters('booked_fe_calendar_timeslot_after','',$this_timeslot_timestamp,$timeslot,$calendar_id);
 
 							$html .= '</span>';
-							$html .= '<span class="timeslot-people"><button data-calendar-id="'.$calendar_id.'" data-title="'.esc_attr($title).'" data-timeslot="'.$timeslot.'" data-date="'.$date.'" class="new-appt button"'.(!$spots_available || !$available || $allready_appointed ? ' disabled' : '').'>'.( $title ? '<span class="timeslot-mobile-title">'.esc_html($title).'</span>' : '' ).'<span class="button-timeslot">'.apply_filters('booked_fe_mobile_timeslot_button',$timeslotText,$this_timeslot_timestamp,$timeslot,$calendar_id).'</span>'.apply_filters('booked_button_book_appointment', '<span class="button-text">'.$button_text.'</span>').'</button></span>';
+                        $html .= '<span class="timeslot-people"><button data-calendar-id="'.$calendar_id.'" data-title="'.esc_attr($title).'" data-timeslot="'.$timeslot.'" data-date="'.$date.'" class="new-appt button"'.(!$spots_available || !$available ? ' disabled' : '').'>'.( $title ? '<span class="timeslot-mobile-title">'.esc_html($title).'</span>' : '' ).'<span class="button-timeslot">'.apply_filters('booked_fe_mobile_timeslot_button',$timeslotText,$this_timeslot_timestamp,$timeslot,$calendar_id).'</span>'.apply_filters('booked_button_book_appointment', '<span class="button-text">'.$button_text.'</span>').'</button></span>';
 						$html .= '</div>';
 					endif;
 
@@ -1033,8 +1031,6 @@ function booked_fe_appointment_list_content($date,$calendar_id = false,$force_da
 					endif;
 				endforeach;
 
-				$allready_appointed = ( in_array(get_current_user_id(), $users_in_this_timeslot) ? true : false );
-
 				/*
 				Calculate the number of spots available based on total minus the appointments booked
 				*/
@@ -1120,7 +1116,8 @@ function booked_fe_appointment_list_content($date,$calendar_id = false,$force_da
 								$html .= apply_filters('booked_fe_calendar_timeslot_after','',$this_timeslot_timestamp,$timeslot,$calendar_id);
 								
 							$html .= '</span>';
-							$html .= '<span class="timeslot-people"><button data-calendar-id="'.$calendar_id.'" data-title="'.esc_attr($title).'" data-timeslot="'.$timeslot.'" data-date="'.$date.'" class="new-appt button"'.(!$spots_available || !$available || $allready_appointed ? ' disabled' : '').'>'.( $title ? '<span class="timeslot-mobile-title">'.esc_html($title).'</span>' : '' ).'<span class="button-timeslot">'.apply_filters('booked_fe_mobile_timeslot_button',$timeslotText,$this_timeslot_timestamp,$timeslot,$calendar_id).'</span>'.apply_filters('booked_button_book_appointment', '<span class="button-text">'.$button_text.'</span>').'</button></span>';
+
+                            $html .= '<span class="timeslot-people"><button data-calendar-id="' . $calendar_id . '" data-title="' . esc_attr($title) . '" data-timeslot="' . $timeslot . '" data-date="' . $date . '" class="new-appt button"' . (!$spots_available || !$available ? ' disabled' : '') . '>' . ($title ? '<span class="timeslot-mobile-title">' . esc_html($title) . '</span>' : '') . '<span class="button-timeslot">' . apply_filters('booked_fe_mobile_timeslot_button', $timeslotText, $this_timeslot_timestamp, $timeslot, $calendar_id) . '</span>' . apply_filters('booked_button_book_appointment', '<span class="button-text">' . $button_text . '</span>') . '</button></span>';
 						$html .= '</div>';
 					endif;
 
