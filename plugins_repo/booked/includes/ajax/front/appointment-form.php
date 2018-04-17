@@ -25,46 +25,50 @@ if ( ! empty( $_POST['calendars'] ) ) {
 }
 
 
-    $user_id = get_current_user_id();
-    $calendar_id = array_keys($bookings)[0];
+$user_id = get_current_user_id();
+$calendar_id = array_keys($bookings)[0];
 
-
-    $args = array(
-        'posts_per_page'   	=> -1,
-        'meta_key'   	   	=> '_appointment_timestamp',
-        'orderby'			=> 'meta_value_num',
-        'order'            	=> 'ASC',
-        'meta_query' => array(
-            array(
-                'key'     => '_appointment_timestamp',
-                'value'   => strtotime(date_i18n('Y-m-d H:i:s')),
-                'compare' => '>=',
-            ),
+$args = array(
+    'posts_per_page'   	=> -1,
+    'meta_key'   	   	=> '_appointment_timestamp',
+    'orderby'			=> 'meta_value_num',
+    'order'            	=> 'ASC',
+    'meta_query' => array(
+        array(
+            'key'     => '_appointment_timestamp',
+            'value'   => strtotime(date_i18n('Y-m-d H:i:s')),
+            'compare' => '>=',
         ),
-        'author'		   	=> $user_id,
-        'post_type'        	=> 'booked_appointments',
-        'post_status'      	=> array('publish','future'),
-        'suppress_filters'	=> true );
+    ),
+    'author'		   	=> $user_id,
+    'post_type'        	=> 'booked_appointments',
+    'post_status'      	=> array('publish','future'),
+    'suppress_filters'	=> true );
 
-    if ($calendar_id):
-        $args['tax_query'] = array(
-            array(
-                'taxonomy' => 'booked_custom_calendars',
-                'field'    => 'term_id',
-                'terms'    => $calendar_id,
-            )
-        );
-    endif;
+if ($calendar_id):
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => 'booked_custom_calendars',
+            'field'    => 'term_id',
+            'terms'    => $calendar_id,
+        )
+    );
+endif;
 
-    $appointments = get_posts($args);
-    $allready_booked = false;
+$appointments = get_posts($args);
+$allready_booked = false;
 
-    foreach ($appointments as $post) {
-            $timeslot = get_post_meta($post->ID, '_appointment_timeslot',true);
-            if(strcmp($post->post_status, "publish") == 0 && strcmp($timeslot, $bookings[$calendar_id][0]['timeslot']) == 0) {
+foreach ($appointments as $post) {
+        $timeslot = get_post_meta($post->ID, '_appointment_timeslot', true);
+        $timestamp = get_post_meta($post->ID, '_appointment_timestamp', true);
+        $app_date = date_i18n('Y-m-d', $timestamp);
+
+        if(strcmp($post->post_status, "publish") == 0 &&
+           strcmp($timeslot, $bookings[$calendar_id][0]['timeslot']) == 0 &&
+           strcmp($app_date, $bookings[$calendar_id][0]['date']) == 0) {
                 $allready_booked = true;
-            }
-    }
+        }
+}
 
 
 // allow other addons to modify the appointments booking list and filter those if necessary 
